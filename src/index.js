@@ -1,3 +1,5 @@
+import React from "react";
+import { render } from "react-dom";
 import { createStore } from "redux";
 import reducer from "./reducer";
 // createStore を使って store を作る
@@ -17,3 +19,13 @@ store.subscribe(() => {
 store.dispatch({ type: "MINUS", payload: { num: 2 } });
 store.dispatch({ type: "PLUS", payload: { num: 1 } });
 store.dispatch({ type: "MINUS", payload: { num: 4 } });
+
+const App = () => {
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+    </div>
+  );
+};
+
+render(<App />, document.getElementById("root"));
