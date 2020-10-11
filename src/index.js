@@ -1,7 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
+import App from "./App";
 import { createStore } from "redux";
 import reducer from "./reducer";
+
+import { Provider } from "react-redux";
+
 // createStore を使って store を作る
 // その際に reducer を紐づける
 const store = createStore(reducer);
@@ -20,12 +24,9 @@ store.dispatch({ type: "MINUS", payload: { num: 2 } });
 store.dispatch({ type: "PLUS", payload: { num: 1 } });
 store.dispatch({ type: "MINUS", payload: { num: 4 } });
 
-const App = () => {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-    </div>
-  );
-};
-
-render(<App />, document.getElementById("root"));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
