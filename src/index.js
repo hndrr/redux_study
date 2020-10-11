@@ -14,10 +14,6 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-// store.dispatch({ type: "PLUS_ONE" });
-// store.dispatch({ type: "PLUS_ONE" });
-// store.dispatch({ type: "PLUS_ONE" });
-
 store.dispatch({ type: "MINUS", payload: { num: 2 } });
 store.dispatch({ type: "PLUS", payload: { num: 1 } });
-store.dispatch({ type: "MINUS", payload: { num: 1 } });
+store.dispatch({ type: "MINUS", payload: { num: 4 } });
